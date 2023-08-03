@@ -1,4 +1,4 @@
-function Mensaje({ msj}) {
+function Mensaje({ msj }) {
     return (
      <>
      <h2>{msj}</h2>
