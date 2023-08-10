@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
-import { giftcards_data } from '../helpers/data.js'
+// import { giftcards_data } from '../helpers/data.js'
 
 const GiftCards = () => {
   let user = JSON.parse(localStorage.getItem('cart_user')) || null
@@ -11,7 +11,10 @@ const GiftCards = () => {
 
   useEffect(() => {
     (async () => {
-      setGiftCards(giftcards_data)
+     // setGiftCards(giftcards_data)
+     const data = await fetch('http://localhost:5000/giftcards')
+     const dataJson = await data.json()
+     setGiftCards(dataJson)
     })();
 
     return () => { }
